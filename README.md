@@ -22,7 +22,7 @@ As with all python projects, you should create a virtual environment where the r
 
 ```
 cd /opt/
-git clone git@github.com:/blixhavn/dyndns-domeneshop
+git clone git@github.com:blixhavn/dyndns-domeneshop.git
 cd dyndns-domeneshop
 python3 -m venv venv
 source venv/bin/activate
