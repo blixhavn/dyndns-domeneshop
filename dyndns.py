@@ -1,6 +1,7 @@
 import logging
 import requests
 import pathlib
+import json
 
 from config import (
     API_ENDPOINT,
@@ -31,12 +32,12 @@ def main():
     response = requests.put(
         f"{API_ENDPOINT}/domains/{DOMAIN_ID}/dns/{RECORD_ID}",
         auth=(API_TOKEN, API_SECRET),
-        data={
+        data=json.dumps({
             "host": HOST,
             "ttl": TTL,
             "type": "A",
             "data": current_ip
-        }
+        })
     )
     if response.status_code != 200:
         logging.error(f"Could not update DNS record: API token not valid")
