@@ -21,14 +21,14 @@ The domain ID and record ID are a bit tricky to find. The simplest way I've foun
 As with all python projects, you should create a virtual environment where the requirements can be installed. 
 
 ```
-cd /opt/
-git clone git@github.com:blixhavn/dyndns-domeneshop.git
+cd 
+git clone https://github.com/blixhavn/dyndns-domeneshop.git
 cd dyndns-domeneshop
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-then you can add it to CRON by writing `crontab` and adding a line:
+then you can add it to CRON by writing `crontab -e` and adding a line:
 ```
-*/30 * * * * /opt/dyndns-domeneshop/venv/bin/python /opt/dyndns-domeneshop/dyndns.py 
+*/30 * * * * /home/<user>/dyndns-domeneshop/venv/bin/python /home/<user>/dyndns-domeneshop/dyndns.py 
