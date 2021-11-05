@@ -28,6 +28,11 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+Then, copy the config template to config.py and update the variables (`<esc>:wq` saves and exits vim):
+```
+cp config_template.py config.py
+vim config.py
+```
 
 then you can add it to CRON by writing `crontab -e` and adding a line:
 ```
