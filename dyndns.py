@@ -1,7 +1,9 @@
-import logging
-import requests
-import pathlib
+
 import json
+import logging
+import os
+import pathlib
+import requests
 
 from config import (
     API_ENDPOINT,
@@ -13,14 +15,16 @@ from config import (
     TTL
 )
 
+working_path = os.path.dirname(os.path.abspath(__file__))
+
 logging.basicConfig(
-    filename='dns_update.log',
+    filename=os.path.join(working_path, 'dns_update.log'),
     level=logging.INFO,
     format='[%(asctime)s] <%(levelname)s> %(message)s'
 )
 
 def main():
-    prev_file = pathlib.Path('previous_ip.txt')
+    prev_file = pathlib.Path(os.path.join(working_path, 'previous_ip.txt'))
     prev_file.touch(exist_ok=True)
 
     with open(prev_file, 'r') as f:
@@ -39,7 +43,7 @@ def main():
             "data": current_ip
         })
     )
-    if response.status_code != 200:
+    if response.status_code != 204:
         logging.error(f"Could not update DNS record: API token not valid")
         return
     logging.info(f"DNS record for {HOST} updated to {current_ip}")
