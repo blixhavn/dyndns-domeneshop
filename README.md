@@ -6,16 +6,14 @@ This is a super simple python script to automatically update the DNS record of a
 API_TOKEN="TOKEN"
 API_SECRET="SECRET"
 
-DOMAIN_ID=000000
-RECORD_ID=0000000
-HOST="subdomain"
+DOMAIN="domain.no"
+SUBDOMAIN="subdomain"
 ```
 
 The token and secret can be found by creating an API key here: [https://www.domeneshop.no/admin?view=api](https://www.domeneshop.no/admin?view=api).
 
-The domain ID and record ID are a bit tricky to find. The simplest way I've found is to open the inspector in your browser (Shift+Ctrl+I in chromium-based browsers), switch to the Network tab, and then look for the server request when manually updating the subdomain entry in the domeneshop admin interface. 
+The domain and subdomain needs to be already created, as this script only attempts to modify an existing record.
 
-![How to get the IDs](get_ids.png)
 
 ## Installing
 As with all python projects, you should create a virtual environment where the requirements can be installed. 
