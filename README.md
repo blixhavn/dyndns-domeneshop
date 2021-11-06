@@ -1,6 +1,6 @@
 ## DYNDNS-Domeneshop
 
-This is a super simple python script to automatically update the DNS record of a subdomain to reflect the current public IP address of the machine running the script. It's meant to be run with CRON or any other scheduling tool. There are five config variables that needs to be updated:
+This is a super simple python script to automatically update the DNS record of a subdomain to reflect the current public IP address of the machine running the script. It's meant to be run with CRON or any other scheduling tool. There are four config variables that needs to be updated:
 
 ```
 API_TOKEN="TOKEN"
